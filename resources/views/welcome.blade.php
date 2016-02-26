@@ -42,17 +42,25 @@
             <div class="content">
                 <div class="title">Laravel 5</div>
 
-                <?php
+                <script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
 
-                $searchResults = Youtube::searchVideos('inside the fire disturbed');
+                <script>
+                    SC.initialize({
+                      client_id: '1bd84fe4d5ee13de2c6e15fb31287eca'
+                    });
 
-                foreach($searchResults as $result)
-                {
-                    $video = Youtube::getVideoInfo($result->id->videoId);
-                    echo $video->player->embedHtml;
-                }
+                    var page_size = 1;
+                    var query = 'Randy Klasen Wobble Shuffle Siz Mix';
 
-                ?>
+                    SC.get('/tracks', { limit: 1, q: query }).then(function(tracks) {
+                        var url = tracks[0].permalink_url;
+                        
+                        SC.get('/oembed', { format: 'json', url: tracks[0].permalink_url }).then(function(embed) {
+
+                            document.write(embed.html);
+                        });
+                    });
+                </script>
 
             </div>
         </div>
