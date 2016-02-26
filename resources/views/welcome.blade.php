@@ -39,6 +39,19 @@
         <div class="container">
             <div class="content">
                 <div class="title">Laravel 5</div>
+
+                <?php
+
+                $searchResults = Youtube::searchVideos('inside the fire disturbed');
+
+                foreach($searchResults as $result)
+                {
+                    $video = Youtube::getVideoInfo($result->id->videoId);
+                    echo $video->player->embedHtml;
+                }
+
+                ?>
+
             </div>
         </div>
     </body>
