@@ -15,13 +15,21 @@ class PlaylistController extends Controller
       $playlist->save();
     }
 
-    public function show($id, $track = null)
+    public function show($id)
     {
-        if (track == null)
-          return \App\Playlist::find($id)->playlist_items;
-        else
-          return \App\PlaylistItem::where('playlist_id', $id)->where('track_id', $track)->get();
+        $items = \App\Playlist::find($id)->playlist_items;
 
+        $tracks = array();
+        $i = 0;
+        foreach ($items as $item)
+        {
+          $t = \App\Track::find($id);
+          $video = Request::
+          $tracks[$i++] = \App\Track::find($id);
+        }
+
+
+        return \View::make('playlist', compact('items', 'tracks'));
     }
 
     public function insert($id, $track)

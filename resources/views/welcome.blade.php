@@ -52,7 +52,7 @@
                     var page_size = 1;
                     var query = 'Lucky ent welcome mix kate foxx';
 
-                    SC.get('/tracks', { limit: 1, q: query }).then(function(tracks) {
+                    SC.get('/tracks', { limit: 10, q: query }).then(function(tracks) {
                         console.log(tracks[0]);
                         var url = tracks[0].permalink_url;
 

@@ -52,9 +52,6 @@ class YoutubeVideoController extends Controller
                 'id'            => $video->id
                 );
 
-            //echo $video->player->embedHtml;
-            //echo '<br><br>';
-
             // And add it to an array.
             $videos[$id++] = $videoData;
         }

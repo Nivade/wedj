@@ -7,7 +7,11 @@
 	</head>
 	<body>
 		<div id="container">
-			hallo
+
+			<a href="{{ action('PlaylistController@show') }}">link</a>
+			@foreach ($tracks as $track)
+				<li>{{ $track['youtube_id'] }}</li>
+			@endforeach
 		</div>
 	</body>
 </html>
