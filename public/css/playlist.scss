@@ -1,5 +1,79 @@
-#container {
-	height: 300px;
-	width: 300px;
-	background-color: blue;
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	outline: none;
+}
+
+body {
+	font-family: calibri;
+}
+
+body #container {
+	margin: 20px auto 0 auto;
+	width: 900px;
+	height: 700px;
+	background-color: red;
+}
+
+#container #search_song {
+	margin: 20px 0 0 20px;
+	width: 860px;
+	height: 35px;
+}
+
+#container #switch {
+	margin: 10px 0 0 20px;
+}
+
+#switch #yt_switch {
+	width: 428px;
+	height: 30px;
+}
+
+#switch #sc_switch {
+	width: 429px;
+	height: 30px;
+}
+
+#container #request_holder {
+	margin-top: 10px;
+	height: 595px;
+	overflow-y: scroll;
+}
+
+#container #request_holder .song_request {
+	overflow: auto;
+	margin: 0 0 10px 20px;
+	width: 860px;
+	height: 130px;
+	background-color: yellow;
+}
+
+.song_request img {
+	float: left;
+	margin: 10px 0 0 10px;
+	width: 180px;
+	height: 110px;
+}
+
+.song_request .content {
+	float: left;
+}
+
+.song_request h3 {
+	margin: 10px 0 0 10px;
+}
+
+.song_request p {
+	margin: 10px 0 0 10px;
+}
+
+.song_request #add_button {
+	float: right;
+	margin: 10px 10px 0 0;
+	width: 110px;
+	height: 110px;
+	cursor: pointer;
 }
