@@ -15,7 +15,8 @@
         "phpunit/phpunit": "~4.0",
         "symfony/css-selector": "2.8.*|3.0.*",
         "symfony/dom-crawler": "2.8.*|3.0.*",
-        "alaouy/youtube": "dev-master"
+        "alaouy/youtube": "dev-master",
+        "illuminate/html": "5.*"
     },
     "autoload": {
         "classmap": [

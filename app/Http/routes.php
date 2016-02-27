@@ -14,6 +14,10 @@ Route::get('/', function () {
     	return view('welcome');
 });
 
+Route::get('playlist', function () {
+    	return view('playlist');
+});
+
 Route::get('youtube/search/{query}', 'YoutubeVideoController@search');
 Route::get('youtube/search/{query}/{limit}', 'YoutubeVideoController@search');
 Route::get('youtube/video/{id}', 'YoutubeVideoController@video');
