@@ -1,8 +1,9 @@
 <html>
 	<head>
 		<title>Playlist</title>
-		
-		{{ HTML::style('sass/playlist.scss') }}
+
+		<link href="{{ asset('css/playlist.scss') }}" media="all" rel="stylesheet" type="text/css" />
+
 	</head>
 	<body>
 		<div id="container">
