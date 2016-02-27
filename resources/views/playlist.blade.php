@@ -7,11 +7,108 @@
 	</head>
 	<body>
 		<div id="container">
+			<div id="search">
+				<form>
+					<input id="search_song" type="text" name="search_song" placeholder="Search"/>
+				</form>
+			</div>
+			<div id="switch">
+				<input id="yt_switch" type="submit" name="yt_switch" value="YouTube"/>
+				<input id="sc_switch" type="submit" name="sc_switch" value="SoundCloud"/>
+			</div>
+			<div id="request_holder">
+				<div class="song_request">
+					<img src="">
+					<div class="content">
+						<h3>Title</h3>
+						<p>Description</p>
+						<p>Duration</p>
+					</div>
+					<input id="add_button" type="submit" name="add_song_button" value="Add Song"/>
+				</div>
+				<div class="song_request">
+					<img src="">
+					<div class="content">
+						<h3>Title</h3>
+						<p>Description</p>
+						<p>Duration</p>
+					</div>
+					<input id="add_button" type="submit" name="add_song_button" value="Add Song"/>
+				</div>
+				<div class="song_request">
+					<img src="">
+					<div class="content">
+						<h3>Title</h3>
+						<p>Description</p>
+						<p>Duration</p>
+					</div>
+					<input id="add_button" type="submit" name="add_song_button" value="Add Song"/>
+				</div>
+				<div class="song_request">
+					<img src="">
+					<div class="content">
+						<h3>Title</h3>
+						<p>Description</p>
+						<p>Duration</p>
+					</div>
+					<input id="add_button" type="submit" name="add_song_button" value="Add Song"/>
+				</div>
+				<div class="song_request">
+					<img src="">
+					<div class="content">
+						<h3>Title</h3>
+						<p>Description</p>
+						<p>Duration</p>
+					</div>
+					<input id="add_button" type="submit" name="add_song_button" value="Add Song"/>
+				</div>
+				<div class="song_request">
+					<img src="">
+					<div class="content">
+						<h3>Title</h3>
+						<p>Description</p>
+						<p>Duration</p>
+					</div>
+					<input id="add_button" type="submit" name="add_song_button" value="Add Song"/>
+				</div>
+				<div class="song_request">
+					<img src="">
+					<div class="content">
+						<h3>Title</h3>
+						<p>Description</p>
+						<p>Duration</p>
+					</div>
+					<input id="add_button" type="submit" name="add_song_button" value="Add Song"/>
+				</div>
+				<div class="song_request">
+					<img src="">
+					<div class="content">
+						<h3>Title</h3>
+						<p>Description</p>
+						<p>Duration</p>
+					</div>
+					<input id="add_button" type="submit" name="add_song_button" value="Add Song"/>
+				</div>
+				<div class="song_request">
+					<img src="">
+					<div class="content">
+						<h3>Title</h3>
+						<p>Description</p>
+						<p>Duration</p>
+					</div>
+					<input id="add_button" type="submit" name="add_song_button" value="Add Song"/>
+				</div>
+				<div class="song_request">
+					<img src="">
+					<div class="content">
+						<h3>Title</h3>
+						<p>Description</p>
+						<p>Duration</p>
+					</div>
+					<input id="add_button" type="submit" name="add_song_button" value="Add Song"/>
+				</div>
+			</div>
 
-			<a href="{{ action('PlaylistController@show') }}">link</a>
-			@foreach ($tracks as $track)
-				<li>{{ $track['youtube_id'] }}</li>
-			@endforeach
 		</div>
 	</body>
 </html>
