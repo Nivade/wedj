@@ -11,36 +11,6 @@ use App\Http\Controllers\Controller;
 
 class YoutubeVideoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -48,25 +18,33 @@ class YoutubeVideoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function search($query, $maxResults = 10)
+    public function search($query, $limit = 10)
     {
+        // Define search parameters.
         $params = array(
             'q' => $query,
             'type' => 'video',
             'part' => 'id, snippet',
-            'maxResults' => $maxResults);
+            'maxResults' => $limit);
 
-        // Ret
+        // Perform a search operation with those parameters.
         $search = \Youtube::searchAdvanced($params, true);
 
         $videos = array();
         $id = 0;
 
+        // Search results are stored in the search object.
+        // So for every result~
         foreach($search['results'] as $result)
         {
+            // A youtube search result is defined as 'SearchResource'
+            // So first we'll find the corresponding video.
             $video = \Youtube::getVideoInfo($result->id->videoId, array('id', 'snippet'));
 
-            // Take everything we need.
+            $track = new \App\Track(['youtube_id' => $video->id]);
+            $track->save();
+
+            // Then we store the data we actually need in a separate array.
             $videoData = array(
                 'thumbnail'     => $video->snippet->thumbnails->default->url,
                 'title'         => $video->snippet->title,
@@ -77,43 +55,17 @@ class YoutubeVideoController extends Controller
             //echo $video->player->embedHtml;
             //echo '<br><br>';
 
+            // And add it to an array.
             $videos[$id++] = $videoData;
         }
-
-        return view('youtube.search.show', compact('videos'));
+        
+        return \Response::json($videos);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function video($id)
     {
-        //
-    }
+        $video = \Youtube::getVideoInfo($id);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return \Response::json($video);
     }
 }

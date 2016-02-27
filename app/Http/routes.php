@@ -15,8 +15,14 @@ Route::get('/', function () {
 });
 
 Route::get('youtube/search/{query}', 'YoutubeVideoController@search');
+Route::get('youtube/search/{query}/{limit}', 'YoutubeVideoController@search');
+Route::get('youtube/video/{id}', 'YoutubeVideoController@video');
 
-Route::get('youtube/search/{query}/{maxResults}', 'YoutubeVideoController@search');
+Route::get('playlist/{id}', 'PlaylistController@show');
+Route::get('playlist/create/{name}', 'PlaylistController@create');
+Route::get('playlist/{id}/insert/{track}', 'PlaylistController@insert');
+
+
 
 /*
 |--------------------------------------------------------------------------
