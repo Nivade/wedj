@@ -19,6 +19,7 @@ Route::get('youtube/search/{query}/{limit}', 'YoutubeVideoController@search');
 Route::get('youtube/video/{id}', 'YoutubeVideoController@video');
 
 Route::get('playlist/{id}', 'PlaylistController@show');
+Route::get('playlist/{id}/{track}', 'PlaylistController@show');
 Route::get('playlist/create/{name}', 'PlaylistController@create');
 Route::get('playlist/{id}/insert/{track}', 'PlaylistController@insert');
 
@@ -36,5 +37,5 @@ Route::get('playlist/{id}/insert/{track}', 'PlaylistController@insert');
 */
 
 Route::group(['middleware' => ['web', 'use.ssl']], function () {
-    
+
 });

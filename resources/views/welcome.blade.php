@@ -50,11 +50,12 @@
                     });
 
                     var page_size = 1;
-                    var query = 'Randy Klasen Wobble Shuffle Siz Mix';
+                    var query = 'Lucky ent welcome mix kate foxx';
 
                     SC.get('/tracks', { limit: 1, q: query }).then(function(tracks) {
+                        console.log(tracks[0]);
                         var url = tracks[0].permalink_url;
-                        
+
                         SC.get('/oembed', { format: 'json', url: tracks[0].permalink_url }).then( function(embed) {
                             document.write(embed.html);
                         });

@@ -11,13 +11,17 @@ class PlaylistController extends Controller
 {
     public function create($name)
     {
-    	$playlist = new \App\Playlist(['name' => $name]);
-        $playlist->save();
+      $playlist = new \App\Playlist(['name' => $name]);
+      $playlist->save();
     }
 
-    public function show($id)
+    public function show($id, $track = null)
     {
-        return \App\Playlist::find($id)->playlist_items;
+        if (track == null)
+          return \App\Playlist::find($id)->playlist_items;
+        else
+          return \App\PlaylistItem::where('playlist_id', $id)->where('track_id', $track)->get();
+
     }
 
     public function insert($id, $track)

@@ -58,8 +58,9 @@ class YoutubeVideoController extends Controller
             // And add it to an array.
             $videos[$id++] = $videoData;
         }
-        
-        return \Response::json($videos);
+
+        //return \Response::json($videos);
+        return \View::make('youtube.search.show', compact('videos'));
     }
 
     public function video($id)
