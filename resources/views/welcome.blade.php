@@ -55,8 +55,7 @@
                     SC.get('/tracks', { limit: 1, q: query }).then(function(tracks) {
                         var url = tracks[0].permalink_url;
                         
-                        SC.get('/oembed', { format: 'json', url: tracks[0].permalink_url }).then(function(embed) {
-
+                        SC.get('/oembed', { format: 'json', url: tracks[0].permalink_url }).then( function(embed) {
                             document.write(embed.html);
                         });
                     });

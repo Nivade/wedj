@@ -48,7 +48,7 @@ class YoutubeVideoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($query, $maxResults = 10)
+    public function search($query, $maxResults = 10)
     {
         $params = array(
             'q' => $query,
@@ -80,7 +80,7 @@ class YoutubeVideoController extends Controller
             $videos[$id++] = $videoData;
         }
 
-        return view('youtubesearch.show', compact('videos'));
+        return view('youtube.search.show', compact('videos'));
     }
 
     /**

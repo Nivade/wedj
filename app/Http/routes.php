@@ -14,9 +14,9 @@ Route::get('/', function () {
     	return view('welcome');
 });
 
-Route::get('youtube/{query}', 'YoutubeVideoController@show');
+Route::get('youtube/search/{query}', 'YoutubeVideoController@search');
 
-Route::get('youtube/{query}/{maxResults}', 'YoutubeVideoController@show');
+Route::get('youtube/search/{query}/{maxResults}', 'YoutubeVideoController@search');
 
 /*
 |--------------------------------------------------------------------------
